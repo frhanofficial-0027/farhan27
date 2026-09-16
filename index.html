@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05070a">
+  <meta name="description" content="FARHAN — personal portfolio and Road Runner mini game.">
+  <title>FARHAN — Digital World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home">FAR<span>HAN</span></a>
+    <nav>
+      <a class="active" href="#home">HOME</a>
+      <a href="#game">GAME</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+
+      <div class="profile-wrap">
+        <div class="ring ring-one"></div>
+        <div class="ring ring-two"></div>
+        <img src="images/farhan.png" alt="FARHAN profile photo" class="profile">
+        <span class="online-dot"></span>
+      </div>
+
+      <div class="hero-copy">
+        <p class="type-line"><span id="typeText"></span><span class="caret"></span></p>
+        <h1 class="glitch" data-text="FARHAN">FARHAN</h1>
+        <p class="tagline">WELCOME TO MY LITTLE DIGITAL WORLD</p>
+
+        <div class="hero-actions">
+          <a href="#game" class="btn primary">🎮 &nbsp; PLAY GAME <span>→</span></a>
+          <a href="#about" class="btn secondary">👤 &nbsp; ABOUT ME</a>
+        </div>
+      </div>
+
+      <a class="scroll" href="#about">SCROLL <span>⌄</span></a>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="section-label">ABOUT ME <i></i></div>
+      <div class="about-grid">
+        <div>
+          <h2>Hi, I'm<br><span>FARHAN</span></h2>
+          <p>I'm a student, dreamer and tech enthusiast. I love exploring new things, building cool projects and turning ideas into reality.</p>
+        </div>
+        <blockquote>“Big dreams<br>need small<br>steps.”</blockquote>
+      </div>
+      <div class="tags">
+        <span>🎓 &nbsp; STUDENT</span>
+        <span>&lt;/&gt; &nbsp; CODER</span>
+        <span>🎮 &nbsp; GAMER</span>
+        <span>☆ &nbsp; DREAMER</span>
+      </div>
+    </section>
+
+    <section class="game-section section" id="game">
+      <div class="section-label">01 / MINI GAME <i></i></div>
+      <div class="game-heading">
+        <div>
+          <h2>ROAD <span>RUNNER</span></h2>
+          <p>Dodge the traffic. Chase the high score.</p>
+        </div>
+        <div class="best-card">🏆 <small>BEST SCORE</small><b id="bestScore">0000</b></div>
+      </div>
+
+      <div class="game-layout">
+        <aside class="game-controls-card">
+          <div class="stat">
+            <small>PLAYER</small>
+            <strong id="playerName">GUEST</strong>
+          </div>
+          <div class="stat">
+            <small>SCORE</small>
+            <strong id="score">0000</strong>
+          </div>
+
+          <button class="btn primary full" id="startBtn">▶ &nbsp; ENTER GAME</button>
+
+          <div class="move-grid">
+            <button id="leftBtn" aria-label="Move left">←<small>A / ←</small></button>
+            <button id="rightBtn" aria-label="Move right">→<small>D / →</small></button>
+          </div>
+
+          <p class="tip">ⓘ &nbsp; Tip: use the buttons on mobile, or A / D / ← / → on a keyboard.</p>
+          <button class="pause" id="pauseBtn" disabled>Ⅱ &nbsp; PAUSE</button>
+        </aside>
+
+        <div class="game-frame">
+          <div class="game-topbar">
+            <span>SCORE <b id="gameScore">0000</b></span>
+            <button id="pauseMini" disabled>Ⅱ</button>
+          </div>
+          <div class="road" id="road" tabindex="0" aria-label="Road Runner game area">
+            <div class="city city-left"></div>
+            <div class="city city-right"></div>
+            <div class="lane lane-1"></div>
+            <div class="lane lane-2"></div>
+            <div class="lane lane-3"></div>
+            <div class="road-lines"></div>
+            <div class="car player-car" id="car">🚗</div>
+            <div id="obstacles"></div>
+            <div class="road-message" id="roadMessage">PRESS ENTER GAME</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="nameModal">
+    <div class="modal-box">
+      <button class="close" id="closeModal">×</button>
+      <div class="mini-logo">FR</div>
+      <p class="eyebrow">READY?</p>
+      <h3>What's your name?</h3>
+      <input id="nameInput" maxlength="18" placeholder="Enter your name" autocomplete="off">
+      <button class="btn primary full" id="beginBtn">START DRIVING →</button>
+    </div>
+  </div>
+
+  <div class="modal" id="gameOverModal">
+    <div class="modal-box">
+      <div class="mini-logo">✓</div>
+      <p class="eyebrow">RUN COMPLETE</p>
+      <h3>Nice drive, <span id="finalName">PLAYER</span>.</h3>
+      <div class="final-score" id="finalScore">0000</div>
+      <small>FINAL SCORE</small>
+      <button class="btn primary full" id="againBtn">PLAY AGAIN →</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
